@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSuite suiteName="VCard" xmlns:vcard="http://www.ibm.com/dfdl/vCard/2.1" 
+xmlns="http://www.ibm.com/xmlns/dfdl/testData" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" 
+xmlns:tdml="http://www.ibm.com/xmlns/dfdl/testData"
+xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+  <tdml:parserTestCase name="vcard-1" root="vCards" model="vCard_2.1.xsd" description="vCard test">
+    <tdml:document>
+      <tdml:documentPart type="file">TestData_2.1/vcard_embedded.txt</tdml:documentPart>
+    </tdml:document>
+    <tdml:infoset>
+      <tdml:dfdlInfoset>
+        <vcard:vCards xmlns="http://www.ibm.com/dfdl/vCard/2.1" >
+          <vCard>
+            <Version xmlns="">
+              <VersionNumber xsi:type="xs:string">2.1</VersionNumber>
+            </Version>
+            <Name xmlns="">
+              <Family xsi:type="xs:string">Bloggs</Family>
+              <Given xsi:type="xs:string">Joe</Given>
+            </Name>
+            <FormattedName xmlns="">
+              <Value xsi:type="xs:string">Joe Bloggs</Value>
+            </FormattedName>
+            <DeliveryAddress xmlns="">
+              <Parameter xsi:type="xs:string">HOME</Parameter>
+              <Street xsi:type="xs:string">1 Trafalgar Square</Street>
+              <Locality xsi:type="xs:string">London</Locality>
+              <PostalCode xsi:type="xs:string">WC2N</PostalCode>
+              <CountryName xsi:type="xs:string">United Kingdom</CountryName>
+            </DeliveryAddress>
+            <Agent xmlns="">
+              <vCard>
+                <Version>
+                  <VersionNumber xsi:type="xs:string">2.1</VersionNumber>
+                </Version>
+                <Name>
+                  <Family xsi:type="xs:string">Orange</Family>
+                  <Given xsi:type="xs:string">Agent</Given>
+                </Name>
+                <FormattedName>
+                  <Value xsi:type="xs:string">Agent Orange</Value>
+                </FormattedName>
+                <Telephone>
+                  <Parameter xsi:type="xs:string">HOME</Parameter>
+                  <Parameter xsi:type="xs:string">CELL</Parameter>
+                  <Value xsi:type="xs:string">+44 20 1234 9999</Value>
+                </Telephone>
+              </vCard>
+            </Agent>
+            <Telephone xmlns="">
+              <Parameter xsi:type="xs:string">HOME</Parameter>
+              <Parameter xsi:type="xs:string">CELL</Parameter>
+              <Value xsi:type="xs:string">+44 20 1234 5678</Value>
+            </Telephone>
+            <Email xmlns="">
+              <Parameter xsi:type="xs:string">INTERNET</Parameter>
+              <Parameter xsi:type="xs:string">HOME</Parameter>
+              <Value xsi:type="xs:string">me@joebloggs.com</Value>
+            </Email>
+            <URL xmlns="">
+              <Parameter xsi:type="xs:string">HOME</Parameter>
+              <Value xsi:type="xs:string">http:/joebloggs.com</Value>
+            </URL>
+            <VendorDefined xmlns="">
+              <ItemName xsi:type="xs:string">SKYPE-USERNAME</ItemName>
+              <Value xsi:type="xs:string">joe.bloggs</Value>
+            </VendorDefined>
+            <VendorDefined xmlns="">
+              <ItemName xsi:type="xs:string">TWITTER</ItemName>
+              <Parameter xsi:type="xs:string">BLAH</Parameter>
+              <Value xsi:type="xs:string">http:/twitter.comjoebloggs</Value>
+            </VendorDefined>
+          </vCard>
+        </vcard:vCards>
+
+      </tdml:dfdlInfoset>
+    </tdml:infoset>
+  </tdml:parserTestCase>
+</testSuite>
+      
